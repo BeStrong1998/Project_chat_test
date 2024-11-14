@@ -1,0 +1,310 @@
+/* Страница регистрации */
+.container-reg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #edf0f5 0%,#edf0f5 100%);
+}
+
+/* Убирает нижнее подчёркивание ссылки на странице регистрации*/
+.text-in-the-menu-reg {
+    text-decoration: none;
+}
+
+/* Убирает нижнее подчёркивание ссылки на странице авторизации*/
+.text-in-the-menu-log {
+    text-decoration: none;
+}
+
+/* Шрифт и цвет букв в меню страницы регистрации и авторизации */
+.content-menu-register {
+    font-family: "Lucida Console", Monaco, monospace;
+    color: gray;
+
+}
+
+/* Название сервиса на странице регистрации и авторизации */
+#logo-text1 {
+    font-size: 150px;
+    margin: 100px;
+    margin-top: 15px;
+    color: #00008B;
+}
+
+/* Страница для Входа */
+.container-log {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #edf0f5 0%,#edf0f5 100%);
+}
+
+/* Шрифт и цвет букв в меню страницы Входа */
+.content-menu-login {
+    font-family: "Lucida Console", Monaco, monospace;
+    color: gray;
+    margin-top: 15px;
+}
+
+/*=================================================================*/
+/* Кнопка закрыть на главной странице */
+.closeModal {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	width: 24px;
+	height: 24px;
+	opacity: 0.2;
+	cursor: pointer;
+    transition: opacity ease 0.5s;
+    font-size: 0.9px;
+}
+
+&:hover {
+	opacity: 1;
+}
+
+.closeModal::before,
+.closeModal::after {
+	content: '';
+	position: absolute;
+	top: 10px;
+	display: block;
+	width: 24px;
+	height: 3px;
+	background: #000;
+}
+
+.closeModal::before {
+	transform: rotate(45deg);
+}
+
+.closeModal::after {
+	transform: rotate(-45deg);э
+}
+
+/*=================================================================*/
+/* Основной контейнер чата */
+#chat-container {
+    /*width: 100%;*/
+    /*max-width: 900px;*/
+
+    width: 200vh;
+    height: 890px;
+    margin-bottom: 90px;
+    background-color: #ffffff;
+    /*border-radius: 20px;*/
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Заголовок чата */
+#chat-header {
+    /*background-color: #0088cc;*/
+    /*color: #ffffff;*/
+    /*background-color: #f9f9f9;*/
+    color: #6d6e71;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Секция сообщений */
+#chat {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    /*background: linear-gradient(to bottom, rgba(171,209,239,1) 0%,rgba(153,198,233,1) 100%);*/
+    /*background-color: #dcf8c6;*/
+    /*background: #0088cc;*/
+}
+
+/* Сообщения */
+#messages {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Стиль для каждого сообщения */
+#messages li {
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    background-color: #dcf8c6;
+    /*background-color: white;*/
+    border-radius: 10px;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+/* Поле ввода чата и кнопка */
+#chat-input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Поле ввода сообщения */
+#message {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+    background-color: #f0f2f5;
+    margin-right: 10px;
+}
+
+/* Кнопка отправки сообщения */
+#send-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #0088cc;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#send-btn:hover {
+    background-color: #007ab8;
+}
+
+/* Иконка отправки */
+#send-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+}
+
+/*=================================================================*/
+/* Главная страница */
+.container-index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 980px;
+    width: 300vh;
+}
+
+/* левое меню главной страницы */
+#left-menu-container {
+    display: block;
+    background-color: white;
+    height: 980px;
+    width: 420px;
+    /*background: linear-gradient(to right, rgba(215,222,227,1) 0%,rgba(229,235,238,1) 0%,rgba(246,248,249,1) 100%,rgba(246,248,249,1) 102%,rgba(246,248,249,1) 103%);*/
+    /*background-color: #f9f9f9;*/
+}
+
+
+/* Подсвечиваем кнопки меню профиля */
+.menu_profile ul li:hover {
+    width: 420px;
+    height: 55px;
+	/*background: linear-gradient(to right, rgba(201,220,233,1) 38%,rgba(201,220,233,1) 100%,rgba(180,208,228,1) 100%);*/
+	/*background: linear-gradient(to bottom, rgba(250,250,250,1) 0%,rgba(240,240,240,1) 0%);*/
+	background-color: #f9f9f9;
+	margin-left: -0px;
+}
+
+
+/* Настраиваем отступ сверху меню слева главной странице */
+.menu_profile {
+    margin-top: 100px;
+}
+
+/* Убирает нижнее подчёркивание левого меню на главной странице */
+.text-menu {
+    text-decoration: none;
+}
+
+
+/* Выбираем цвет букв левого меню главной странице */
+ul.nav-news-feed li a{
+    /*color: #6d6e71;*/
+    color: black;
+    font-weight: bold;
+}
+
+ul.nav-news-feed li i{
+  font-size: 15px;
+  margin-right: 15px;
+  float: left;
+}
+
+.nav-news-feed {
+    font-family: "Lucida Console", Monaco, monospace;
+    color: black;
+}
+
+/* Настраиваем контейнер меню слева */
+ul.nav-news-feed{
+  padding-left: 0px;
+  padding-right: 20px;
+  margin: 0 0 40px 0;
+  /*background: linear-gradient(to right, rgba(215,222,227,1) 0%,rgba(229,235,238,1) 0%,rgba(246,248,249,1) 100%,rgba(246,248,249,1) 102%,rgba(246,248,249,1) 103%);*/
+  padding-top: 20px;
+}
+
+ul.nav-news-feed li{
+  list-style: none;
+  display: block;
+  padding: 15px 0;
+}
+
+ul.nav-news-feed li div{
+  position: relative;
+  margin-left: 15px;
+  }
+
+
+/*  Имя пользователя */
+#users-header {
+    color: #6d6e71;
+    margin-left: 15px;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+/*=================================================================*/
+/* Делаем контейнер flex box для верхнего поля*/
+.footer-flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Верхнее поле главной страницы и его элементы */
+.footer-field {
+    margin-bottom: 0px;
+    /*background: #0088cc;*/
+    background: linear-gradient(to bottom, rgba(250,250,250,1) 0%,rgba(240,240,240,1) 0%);
+    height: 50px;
+    display: inline;
+
+}
+/* Настраиваем элементы в верхнем контейнере */
+#future-text-log {
+    font-family: "Lucida Console", Monaco, monospace;
+    color: #00008B;
+    font-weight: bold;
+    float: left;
+    margin-left: 15px;
+    margin-top: 6px;
+    font-size: 25px;
+}

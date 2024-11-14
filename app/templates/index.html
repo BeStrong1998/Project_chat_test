@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="footer-flex-container">
+    <div class="footer-field">
+        <h1 id="future-text-log">NetWork Face</h1>
+    </div>
+</div>
+<div class="container-index">
+    <div id="left-menu-container">
+        <div id="users-header">Имя владельца страницы</div>
+        <div id="users"></div>
+        <div class="menu_profile">
+            <ul class="nav-news-feed">
+                <li><div><a class="text-menu" href="#">Моя лента новостей</a></div></li>
+                <li><div><a class="text-menu" href="#">Друзья</a></div></li>
+                <li><div><a class="text-menu" href="#">Сообщения</a></div></li>
+                <li><div><a class="text-menu" href="#">Фотографии</a></div></li>
+                <li><div><a class="text-menu" href="#">Видео</a></div></li>
+            </ul>
+         </div>
+    </div>
+
+    <div>
+        <a class="closeModal" href="{{ url_for('logout') }}"></a>
+    </div>
+    <div id="chat-container">
+        <div id="chat-header">Имя пользователя с кем ведется переписка или имя группы</div>
+        <div id="chat">
+            <ul id="messages"></ul>
+        </div>
+        <div id="chat-input">
+            <input id="message" placeholder="Написать сообщение..." autocomplete="off">
+            <button id="send-btn" onclick="sendMessage()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M2.01 21l20.99-9-20.99-9-.01 7 15 2-15 2z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        // Получаем сообщения от сервера
+        socket.on('message', function(msg) {
+            var messages = document.getElementById('messages');
+            var messageElement = document.createElement('li');
+            messageElement.innerHTML = msg;
+            messages.appendChild(messageElement);
+        });
+
+        // Отправка сообщения на сервер
+        function sendMessage() {
+            var input = document.getElementById('message');
+            var message = input.value;
+            socket.send(message);
+            input.value = '';
+        }
+
+        // Отправка сообщения при нажатии Enter
+        document.getElementById('message').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</div>
+{% endblock %}
